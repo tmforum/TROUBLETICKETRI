@@ -1,0 +1,87 @@
+{
+    "eventType": "TicketStatusChangeNotification",
+    "eventTime": "2014-09-27T05:46:25.0Z",
+    "eventId": "92445",
+    "event": {"ticket": {
+        "id": "58",
+        "correlationId": "TT53482",
+        "description": "Customer complaint over last invoice.",
+        "severity": "Urgent",
+        "type": "Bills, charges or payment",
+        "creationDate": "2017-07-23",
+        "targetResolutionDate": "2017-07-23",
+        "status": "Submitted",
+        "statusChangeReason": "string",
+        "statusChangeDate": "2017-07-23",
+        "relatedParty": [
+            {
+                "href": "/customer/1234",
+                "role": "Originator"
+            },
+            {
+                "href": "/operator/1234",
+                "role": "Owner"
+            },
+            {
+                "href": "Roger Collins",
+                "role": "Reviser"
+            }
+        ],
+        "relatedObject": [
+            {
+                "involvement": "Disputed",
+                "reference": "/invoice/1234"
+            },
+            {
+                "involvement": "Adjusted",
+                "reference": "/invoice/5678"
+            }
+        ],
+        "note": [
+            {
+                "date": "2013-07-24",
+                "author": "Arthur Evans",
+                "text": "Already called the expert"
+            },
+            {
+                "date": "2013-07-25",
+                "author": "Arthur Evans",
+                "text": "Informed the originator"
+            }
+        ],
+        "href": "http://localhost:8080/DSTroubleTicket/api/troubleTicketManagement/v2/hal/troubleTicket/58",
+        "_links": [
+            {"self": {"href": "http://localhost:8080/DSTroubleTicket/api/troubleTicketManagement/v2/hal/troubleTicket/58"}},
+            {"acknowledge": {
+                "title": "Acknowledged",
+                "method": "PATCH",
+                "href": "",
+                "fields": [
+                    {
+                        "name": "status",
+                        "value": "Acknowledged"
+                    },
+                    {
+                        "name": "statusChangeReason",
+                        "type": "string"
+                    }
+                ]
+            }},
+            {"reject": {
+                "title": "Rejected",
+                "method": "PATCH",
+                "href": "",
+                "fields": [
+                    {
+                        "name": "status",
+                        "value": "Rejected"
+                    },
+                    {
+                        "name": "statusChangeReason",
+                        "type": "string"
+                    }
+                ]
+            }}
+        ]
+    }}
+}

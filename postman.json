@@ -1,0 +1,344 @@
+{
+  "info": {
+    "name": "API TroubleTicket",
+    "_postman_id": "1b7975bc-7efb-4873-9ff9-1798d89877b6",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/"
+  },
+  "item": [
+    {
+      "name": "troubleTicket",
+      "item": [
+        {
+          "id": "48f1a205-9077-4825-8cd1-59fdbe9335a6",
+          "name": "troubleTicketFind",
+          "request": {
+            "url": "http://example.com/DSTroubleTicket/api/troubleTicketManagement/v2/troubleTicket?fields=fields",
+            "method": "GET",
+            "body": {
+              "mode": "raw"
+            }
+          },
+          "response": [
+            {
+              "status": "List of TroubleTicket",
+              "code": 200
+            }
+          ],
+          "description": {
+            "content": "troubleTicketFind",
+            "type": "text/markdown"
+          }
+        },
+        {
+          "id": "0c0702a0-1948-41d8-9c14-8b25da3e3316",
+          "name": "troubleTicketCreate",
+          "request": {
+            "url": "http://example.com/DSTroubleTicket/api/troubleTicketManagement/v2/troubleTicket",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=utf-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"Submitted\",\"statusChangeReason\":\"statusChangeReason\",\"id\":\"id\",\"correlationId\":\"correlationId\",\"description\":\"description\",\"severity\":\"severity\",\"type\":\"type\",\"creationDate\":\"25-07-2017\",\"targetResolutionDate\":\"25-07-2017\",\"statusChangeDate\":\"25-07-2017\",\"relatedParty\":[{\"href\":\"href\",\"role\":\"role\"}],\"relatedObject\":[{\"involvement\":\"involvement\",\"reference\":\"reference\"}],\"note\":[{\"date\":\"25-07-2017\",\"author\":\"author\",\"text\":\"text\"}]}"
+            }
+          },
+          "response": [
+            {
+              "status": "TroubleTicket",
+              "code": 200
+            }
+          ],
+          "description": {
+            "content": "troubleTicketCreate",
+            "type": "text/markdown"
+          }
+        },
+        {
+          "id": "09ffaece-65dc-404c-90df-a415e2adf2dc",
+          "name": "troubleTicketGet",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "example.com",
+              "path": [
+                "DSTroubleTicket",
+                "api",
+                "troubleTicketManagement",
+                "v2",
+                ":troubleTicketId"
+              ],
+              "port": "80",
+              "query": [
+                {
+                  "key": "fields",
+                  "value": "fields"
+                }
+              ],
+              "variable": [
+                {
+                  "id": "troubleTicketId",
+                  "value": "troubleTicketId"
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {
+              "mode": "raw"
+            }
+          },
+          "response": [
+            {
+              "status": "TroubleTicket",
+              "code": 200
+            }
+          ],
+          "description": {
+            "content": "troubleTicketGet",
+            "type": "text/markdown"
+          }
+        },
+        {
+          "id": "2d8e5548-cdeb-4cc5-9d7a-f1e8f151a034",
+          "name": "troubleTicketUpdate",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "example.com",
+              "path": [
+                "DSTroubleTicket",
+                "api",
+                "troubleTicketManagement",
+                "v2",
+                ":troubleTicketId"
+              ],
+              "port": "80",
+              "variable": [
+                {
+                  "id": "troubleTicketId",
+                  "value": "troubleTicketId"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=utf-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"Submitted\",\"statusChangeReason\":\"statusChangeReason\",\"id\":\"id\",\"correlationId\":\"correlationId\",\"description\":\"description\",\"severity\":\"severity\",\"type\":\"type\",\"creationDate\":\"25-07-2017\",\"targetResolutionDate\":\"25-07-2017\",\"statusChangeDate\":\"25-07-2017\",\"relatedParty\":[{\"href\":\"href\",\"role\":\"role\"}],\"relatedObject\":[{\"involvement\":\"involvement\",\"reference\":\"reference\"}],\"note\":[{\"date\":\"25-07-2017\",\"author\":\"author\",\"text\":\"text\"}]}"
+            }
+          },
+          "response": [
+            {
+              "status": "Success TroubleTicket",
+              "code": 200
+            }
+          ],
+          "description": {
+            "content": "troubleTicketUpdate",
+            "type": "text/markdown"
+          }
+        },
+        {
+          "id": "eb9c9467-1b7f-499c-9789-f7d3ab775df7",
+          "name": "troubleTicketPatch",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "example.com",
+              "path": [
+                "DSTroubleTicket",
+                "api",
+                "troubleTicketManagement",
+                "v2",
+                ":troubleTicketId"
+              ],
+              "port": "80",
+              "variable": [
+                {
+                  "id": "troubleTicketId",
+                  "value": "troubleTicketId"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=utf-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"Submitted\",\"statusChangeReason\":\"statusChangeReason\",\"id\":\"id\",\"correlationId\":\"correlationId\",\"description\":\"description\",\"severity\":\"severity\",\"type\":\"type\",\"creationDate\":\"25-07-2017\",\"targetResolutionDate\":\"25-07-2017\",\"statusChangeDate\":\"25-07-2017\",\"relatedParty\":[{\"href\":\"href\",\"role\":\"role\"}],\"relatedObject\":[{\"involvement\":\"involvement\",\"reference\":\"reference\"}],\"note\":[{\"date\":\"25-07-2017\",\"author\":\"author\",\"text\":\"text\"}]}"
+            }
+          },
+          "response": [
+            {
+              "status": "Success TroubleTicket",
+              "code": 200
+            }
+          ],
+          "description": {
+            "content": "troubleTicketPatch",
+            "type": "text/markdown"
+          }
+        }
+      ]
+    },
+    {
+      "name": "hub",
+      "item": [
+        {
+          "id": "414882d8-078d-4994-a2eb-2aae7249af5d",
+          "name": "hubFind",
+          "request": {
+            "url": "http://example.com/DSTroubleTicket/api/troubleTicketManagement/v2/hub",
+            "method": "GET",
+            "body": {
+              "mode": "raw"
+            }
+          },
+          "response": [
+            {
+              "status": "List of Hub",
+              "code": 200
+            }
+          ],
+          "description": {
+            "content": "hubFind",
+            "type": "text/markdown"
+          }
+        },
+        {
+          "id": "0dbe2543-f217-4076-9d8a-f2e3236064d7",
+          "name": "hubCreate",
+          "request": {
+            "url": "http://example.com/DSTroubleTicket/api/troubleTicketManagement/v2/hub",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=utf-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"id\":\"id\",\"callback\":\"callback\",\"query\":\"query\"}"
+            }
+          },
+          "response": [
+            {
+              "status": "Hub",
+              "code": 200
+            }
+          ],
+          "description": {
+            "content": "hubCreate",
+            "type": "text/markdown"
+          }
+        },
+        {
+          "id": "feb632f3-b688-4344-bd9e-aaf61f863eb6",
+          "name": "hubGet",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "example.com",
+              "path": [
+                "DSTroubleTicket",
+                "api",
+                "troubleTicketManagement",
+                "v2",
+                ":hubId"
+              ],
+              "port": "80",
+              "variable": [
+                {
+                  "id": "hubId",
+                  "value": "hubId"
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {
+              "mode": "raw"
+            }
+          },
+          "response": [
+            {
+              "status": "Hub",
+              "code": 200
+            }
+          ],
+          "description": {
+            "content": "hubGet",
+            "type": "text/markdown"
+          }
+        },
+        {
+          "id": "fb3442ab-b9ad-4470-909e-10fc02deb664",
+          "name": "hubDelete",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "host": "example.com",
+              "path": [
+                "DSTroubleTicket",
+                "api",
+                "troubleTicketManagement",
+                "v2",
+                ":hubId"
+              ],
+              "port": "80",
+              "variable": [
+                {
+                  "id": "hubId",
+                  "value": "hubId"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {
+              "mode": "raw"
+            }
+          },
+          "response": [
+            {
+              "status": "Success",
+              "code": 200
+            }
+          ],
+          "description": {
+            "content": "hubDelete",
+            "type": "text/markdown"
+          }
+        }
+      ]
+    }
+  ]
+}

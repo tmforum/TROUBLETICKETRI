@@ -1,0 +1,13 @@
+{
+	"db_prot": "mongodb",
+	"db_user": "mongodb",
+	"db_ruser": "admin",
+	"db_rpassword": "RMHktq98906",
+	"db_password": "mongodb",
+	"db_rhost": "mongodb180941-env-5612107.jelastic.servint.net",
+	"db_host": "localhost",
+	"db_port": 27017,
+	"db_name": "troubleTicket",
+	"alarm_host": "http://localhost:10011",
+	"alarm_url_hal": "/api/troubleTicketManagement/v2/hal/"
+}

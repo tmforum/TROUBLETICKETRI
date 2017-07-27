@@ -1,0 +1,272 @@
+---
+swagger: "2.0"
+info:
+  description: ""
+  version: "2.0"
+  title: "API TroubleTicket"
+basePath: "/DSTroubleTicket/api/troubleTicketManagement/v2"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /troubleTicket:
+    get:
+      tags:
+      - "troubleTicket"
+      summary: "troubleTicketFind"
+      description: ""
+      operationId: "troubleTicketFind"
+      parameters:
+      - name: "fields"
+        in: "query"
+        description: ""
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "List of TroubleTicket"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/TroubleTicket"
+      x-swagger-router-controller: "TroubleTicket"
+    post:
+      tags:
+      - "troubleTicket"
+      summary: "troubleTicketCreate"
+      description: ""
+      operationId: "troubleTicketCreate"
+      parameters:
+      - in: "body"
+        name: "troubleTicket"
+        required: true
+        schema:
+          $ref: "#/definitions/TroubleTicket"
+      responses:
+        201:
+          description: "TroubleTicket"
+          schema:
+            $ref: "#/definitions/TroubleTicket"
+      x-swagger-router-controller: "TroubleTicket"
+  /troubleTicket/{troubleTicketId}:
+    get:
+      tags:
+      - "troubleTicket"
+      summary: "troubleTicketGet"
+      description: ""
+      operationId: "troubleTicketGet"
+      parameters:
+      - name: "troubleTicketId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "fields"
+        in: "query"
+        description: ""
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "TroubleTicket"
+          schema:
+            $ref: "#/definitions/TroubleTicket"
+      x-swagger-router-controller: "TroubleTicket"
+    put:
+      tags:
+      - "troubleTicket"
+      summary: "troubleTicketUpdate"
+      description: ""
+      operationId: "troubleTicketUpdate"
+      parameters:
+      - name: "troubleTicketId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "troubleTicket"
+        required: true
+        schema:
+          $ref: "#/definitions/TroubleTicket"
+      responses:
+        201:
+          description: "Success TroubleTicket"
+          schema:
+            $ref: "#/definitions/TroubleTicket"
+      x-swagger-router-controller: "TroubleTicket"
+    patch:
+      tags:
+      - "troubleTicket"
+      summary: "troubleTicketPatch"
+      description: ""
+      operationId: "troubleTicketPatch"
+      parameters:
+      - name: "troubleTicketId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "troubleTicket"
+        required: true
+        schema:
+          $ref: "#/definitions/TroubleTicket"
+      responses:
+        200:
+          description: "Success TroubleTicket"
+          schema:
+            $ref: "#/definitions/TroubleTicket"
+      x-swagger-router-controller: "TroubleTicket"
+  /hub:
+    get:
+      tags:
+      - "hub"
+      summary: "hubFind"
+      description: ""
+      operationId: "hubFind"
+      parameters: []
+      responses:
+        200:
+          description: "List of Hub"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Hub"
+      x-swagger-router-controller: "Hub"
+    post:
+      tags:
+      - "hub"
+      summary: "hubCreate"
+      description: ""
+      operationId: "hubCreate"
+      parameters:
+      - in: "body"
+        name: "hub"
+        required: true
+        schema:
+          $ref: "#/definitions/Hub"
+      responses:
+        201:
+          description: "Hub"
+          schema:
+            $ref: "#/definitions/Hub"
+      x-swagger-router-controller: "Hub"
+  /hub/{hubId}:
+    get:
+      tags:
+      - "hub"
+      summary: "hubGet"
+      description: ""
+      operationId: "hubGet"
+      parameters:
+      - name: "hubId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Hub"
+          schema:
+            $ref: "#/definitions/Hub"
+      x-swagger-router-controller: "Hub"
+    delete:
+      tags:
+      - "hub"
+      summary: "hubDelete"
+      description: ""
+      operationId: "hubDelete"
+      parameters:
+      - name: "hubId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        204:
+          description: "Success"
+      x-swagger-router-controller: "Hub"
+definitions:
+  Note:
+    type: "object"
+    properties:
+      date:
+        type: "string"
+        format: "date"
+      author:
+        type: "string"
+      text:
+        type: "string"
+  RelatedObject:
+    type: "object"
+    properties:
+      involvement:
+        type: "string"
+      reference:
+        type: "string"
+  RelatedParty:
+    type: "object"
+    properties:
+      href:
+        type: "string"
+      role:
+        type: "string"
+  TroubleTicket:
+    type: "object"
+    required:
+    - "status"
+    - "statusChangeReason"
+    properties:
+      id:
+        type: "string"
+      correlationId:
+        type: "string"
+      description:
+        type: "string"
+      severity:
+        type: "string"
+      type:
+        type: "string"
+      creationDate:
+        type: "string"
+        format: "date"
+      targetResolutionDate:
+        type: "string"
+        format: "date"
+      status:
+        type: "string"
+        enum:
+        - "Submitted"
+        - "Rejected"
+        - "Acknowledged"
+        - "InProgress"
+        - "InProgressHeld"
+        - "InProgressPending"
+        - "Resolved"
+        - "Closed"
+        - "Cancelled"
+      statusChangeReason:
+        type: "string"
+      statusChangeDate:
+        type: "string"
+        format: "date"
+      relatedParty:
+        type: "array"
+        items:
+          $ref: "#/definitions/RelatedParty"
+      relatedObject:
+        type: "array"
+        items:
+          $ref: "#/definitions/RelatedObject"
+      note:
+        type: "array"
+        items:
+          $ref: "#/definitions/Note"
+  Hub:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      callback:
+        type: "string"
+      query:
+        type: "string"
