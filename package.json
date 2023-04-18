@@ -15,7 +15,7 @@
     "connect": "^3.2.0",
     "express": "^4.15.3",
     "js-yaml": "^3.3.0",
-    "mongodb": "^2.2.30",
+    "mongodb": "^3.1.13",
     "node-uuid": "^1.4.8",
     "query-to-mongo": "^0.6.2",
     "swagger-tools": "0.10.1"
